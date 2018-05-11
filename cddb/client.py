@@ -88,5 +88,4 @@ class CDDBClient:
                 result_dict[k] += v[:-1]
             else:
                 result_dict[k] = v[:-1]
-        print(CDDBResult.from_query(result_dict))
-        return result_dict
+        return CDDBResult.from_query(result_dict)

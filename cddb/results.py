@@ -30,10 +30,12 @@ class CDDBResult:
         self.extra_info = extra_info
 
     def __str__(self):
-        return '<%s : [%s tracks] %s - %s>' % (self.__class__.__name__,
-                                         len(self.tracks),
-                                         self.album_artist,
-                                         self.album_title)
+        return '<%s : [%s tracks of %s from %s] %s - %s>' % (self.__class__.__name__,
+                                                           len(self.tracks),
+                                                           self.genre,
+                                                           self.year,
+                                                           self.album_artist,
+                                                           self.album_title)
 
     @property
     def track_count(self):
@@ -71,3 +73,6 @@ class CDDBTitle:
         self.artist = artist
         self.title = title
         self.extt = extt
+
+    def __str__(self):
+        return "<%s: #%s %s - %s>" % (self.__class__.__name__, self.track_no, self.artist, self.title)

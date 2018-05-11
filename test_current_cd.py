@@ -13,4 +13,9 @@ import cddb
 
 if __name__ == "__main__":
     c = cddb.CDDBClient(discid.read())
-    c.query()
+    r = c.query()
+
+    print (r)
+    for i in r.tracks:
+        print(i)
+
